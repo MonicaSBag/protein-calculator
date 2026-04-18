@@ -1,0 +1,32 @@
+/* =============================================
+   styles.css — Botanical Lab Calculator
+   ============================================= */
+
+/* ---------- Base ---------- */
+body {
+    font-family: 'Manrope', sans-serif;
+    min-height: max(884px, 100dvh);
+}
+
+/* ---------- Material Symbols ---------- */
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* ---------- Custom Backgrounds ---------- */
+.glass-panel {
+    background: rgba(254, 251, 219, 0.8);
+    backdrop-filter: blur(20px);
+}
+
+/* ---------- Remove number input arrows ---------- */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0 !important;
+}
+
+input[type=number] {
+    -moz-appearance: textfield !important;
+    appearance: textfield !important;
+}

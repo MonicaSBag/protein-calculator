@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="js/tailwind.config.js"></script>
+    <link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body class="bg-surface text-on-surface min-h-screen pb-24">
+
+<main class="max-w-md mx-auto px-6 pt-12 space-y-12">
+
+    <!-- Result Display Section -->
+    <section class="text-center space-y-2">
+        <div class="relative inline-block">
+            <div class="flex items-baseline justify-center gap-2">
+                <span class="text-8xl font-extrabold tracking-tighter text-primary" id="resultado">-</span>
+                <span class="text-2xl font-bold text-on-surface-variant">g</span>
+            </div>
+            <div class="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-secondary-container/20 rounded-full blur-3xl"></div>
+        </div>
+        <p class="text-on-surface-variant font-body text-sm italic">Proteína total</p>
+    </section>
+
+    <!-- Input Form Section -->
+    <div class="surface-container rounded-xl p-8 space-y-10">
+        <div class="grid gap-8">
+
+            <!-- Input 1 -->
+                <div class="space-y-3">
+                    <label class="block text-xs font-bold uppercase tracking-wider text-on-surface-variant px-1" for="proteina100g">
+                        Proteína por 100g
+                    </label>
+                    <div class="relative group">
+                        <input class="w-full bg-surface-container-high border-b-2 border-outline-variant/20 focus:border-primary-fixed transition-all outline-none py-4 px-1 text-2xl font-semibold text-primary placeholder:text-outline-variant/50"
+                               id="proteina100g" placeholder="0.0" type="text" inputmode="decimal"/>
+                        <span class="absolute right-1 bottom-4 text-on-surface-variant font-medium">g</span>
+                    </div>
+                </div>
+
+            <!-- Input 2 -->
+            <div class="space-y-3">
+                <label class="block text-xs font-bold uppercase tracking-wider text-on-surface-variant px-1" for="gramosConsumidos">
+                    Gramos consumidos
+                </label>
+                <div class="relative group">
+                    <input class="w-full bg-surface-container-high border-b-2 border-outline-variant/20 focus:border-primary-fixed transition-all outline-none py-4 px-1 text-2xl font-semibold text-primary placeholder:text-outline-variant/50"
+                           id="gramosConsumidos" placeholder="0" type="text" inputmode="decimal"/>
+                    <span class="absolute right-1 bottom-4 text-on-surface-variant font-medium">g</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Button -->
+        <button style="background: #0a3323" class="w-full text-on-primary py-5 rounded-xl font-bold text-lg tracking-tight shadow-xl shadow-primary/5 active:scale-95 duration-200 transition-all hover:opacity-90"
+                onclick="calcularProteina()">
+            Calcular Proteína
+        </button>
+    </div>
+</main>
+
+<script src="js/script.js"></script>
+</body>
+</html>
