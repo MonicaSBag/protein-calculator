@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="css/styles.css"/>
 </head>
 <body class="bg-surface text-on-surface min-h-screen pb-24">
-
 <main class="max-w-md mx-auto px-6 pt-12 space-y-12">
     <section class="text-center space-y-2">
         <div class="relative inline-block">
@@ -24,32 +23,64 @@
     </section>
     <div class="surface-container rounded-xl p-8 space-y-10">
         <div class="grid gap-8">
-             <div class="space-y-3">
-                    <label class="block text-xs font-bold uppercase tracking-wider text-on-surface-variant px-1" for="proteina100g">
+            <div class="grid grid-cols-2 gap-4">
+                <div class="space-y-3 relative">
+                    <label class="block text-xs font-bold uppercase tracking-wider text-on-surface-variant px-1">
+                        Alimento
+                    </label>
+                    <input id="alimento"
+                           type="text"
+                           placeholder="Buscar alimento"
+                           class="w-full bg-surface-container-high border-b-2 border-outline-variant/20
+                          focus:border-primary-fixed transition-all outline-none py-4 px-1
+                          text-2xl font-semibold text-primary placeholder:text-outline-variant/50"/>
+                    <ul id="dropdownAlimentos"
+                        class="absolute top-full left-0 w-full bg-surface-container-high
+                       border border-outline-variant/20 rounded-lg shadow-lg mt-1 hidden
+                       max-h-48 overflow-y-auto z-20">
+                    </ul>
+                </div>
+                <div class="space-y-3">
+                    <label class="block text-xs font-bold uppercase tracking-wider text-on-surface-variant px-1">
                         Proteína por 100g
                     </label>
+
                     <div class="relative group">
-                        <input class="w-full bg-surface-container-high border-b-2 border-outline-variant/20 focus:border-primary-fixed transition-all outline-none py-4 px-1 text-2xl font-semibold text-primary placeholder:text-outline-variant/50"
-                               id="proteina100g" placeholder="0.0" type="text" inputmode="decimal"/>
+                        <input id="proteina100g"
+                               type="text"
+                               inputmode="decimal"
+                               placeholder="0.0"
+                               readonly
+                               class="w-full bg-surface-container-high border-b-2 border-outline-variant/20
+                              focus:border-primary-fixed transition-all outline-none py-4 px-1
+                              text-2xl font-semibold text-primary placeholder:text-outline-variant/50
+                              cursor-not-allowed opacity-70"/>
                         <span class="absolute right-1 bottom-4 text-on-surface-variant font-medium">g</span>
                     </div>
                 </div>
+            </div>
             <div class="space-y-3">
-                <label class="block text-xs font-bold uppercase tracking-wider text-on-surface-variant px-1" for="gramosConsumidos">
+                <label class="block text-xs font-bold uppercase tracking-wider text-on-surface-variant px-1">
                     Gramos consumidos
                 </label>
                 <div class="relative group">
-                    <input class="w-full bg-surface-container-high border-b-2 border-outline-variant/20 focus:border-primary-fixed transition-all outline-none py-4 px-1 text-2xl font-semibold text-primary placeholder:text-outline-variant/50"
-                           id="gramosConsumidos" placeholder="0" type="text" inputmode="decimal"/>
+                    <input id="gramosConsumidos"
+                           type="text"
+                           inputmode="decimal"
+                           placeholder="0"
+                           class="w-full bg-surface-container-high border-b-2 border-outline-variant/20
+                          focus:border-primary-fixed transition-all outline-none py-4 px-1
+                          text-2xl font-semibold text-primary placeholder:text-outline-variant/50"/>
                     <span class="absolute right-1 bottom-4 text-on-surface-variant font-medium">g</span>
                 </div>
             </div>
         </div>
-        <button style="background: #0a3323" class="w-full text-on-primary py-5 rounded-xl font-bold text-lg tracking-tight shadow-xl shadow-primary/5 active:scale-95 duration-200 transition-all hover:opacity-90"
-                onclick="calcularProteina()">
-            Calcular Proteína
-        </button>
+    <button style="background: #0a3323" class="w-full text-on-primary py-5 rounded-xl font-bold text-lg tracking-tight shadow-xl shadow-primary/5 active:scale-95 duration-200 transition-all hover:opacity-90"
+            onclick="calcularProteina()">
+        Calcular Proteína
+    </button>
     </div>
+
 </main>
 <footer class="navbar w-full bg-surface-container-high shadow-inner border-t border-outline-variant/20 fixed bottom-0 left-0 z-50">
     <div class="max-w-md mx-auto px-6 py-4 flex items-center justify-center gap-10 text-sm font-semibold">
